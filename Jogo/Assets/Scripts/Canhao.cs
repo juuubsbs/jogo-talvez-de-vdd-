@@ -16,7 +16,7 @@ public class Canhao : MonoBehaviour
         }
     }
 
-    void Atirar()
+    private void Atirar()
     {
         // Converte a posição do mouse para a posição no mundo
         Vector3 posicaoMouse = Input.mousePosition;
