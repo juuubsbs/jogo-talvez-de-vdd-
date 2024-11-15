@@ -16,12 +16,13 @@ public class SoundsHandler : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = clickSound;
 
+        button.onClick.AddListener(PlayClick);
     }
 
     // Update is called once per frame
     void Update()
     {
-        button.onClick.AddListener(PlayClick);
+        
         
     }
 

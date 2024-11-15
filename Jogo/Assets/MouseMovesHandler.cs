@@ -5,6 +5,7 @@ using UnityEngine;
 public class MouseMovesHandler : MonoBehaviour
 {
     private Ray raio = new Ray();
+    private Vector2 mousePosition = new Vector2();
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,8 @@ public class MouseMovesHandler : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)){
-            raio = Camera.main.ScreenPointToRay(Input.mousePosition);
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            raio = Camera.main.ScreenPointToRay(mousePosition);
             Debug.Log("Mouse clicked" + raio);
         };
     }
