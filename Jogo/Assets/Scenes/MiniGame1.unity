@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 806443786}
   - component: {fileID: 806443785}
   m_Layer: 0
-  m_Name: 78152e18-1c0a-4f01-b79a-ec2c306d3246-removebg-preview
+  m_Name: Mr.Pasta
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -401,7 +401,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 551ef9c57240fb047b8eeef8f1da251f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e8d297d315985024cac40ccd9d36ff1b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 1020740746}
   - component: {fileID: 1020740745}
   m_Layer: 0
-  m_Name: teste-removebg-preview
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -505,8 +505,8 @@ Transform:
   m_GameObject: {fileID: 1020740744}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07, y: -0.16, z: 0}
-  m_LocalScale: {x: 3.0574, y: 2.1851, z: 1}
+  m_LocalPosition: {x: 0.0026, y: -0.1293, z: 0}
+  m_LocalScale: {x: 3.3678327, y: 2.1982107, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 1415726071}
   - component: {fileID: 1415726070}
   m_Layer: 0
-  m_Name: ulesule
+  m_Name: "Colisor Ch\xE3o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -635,7 +635,7 @@ Transform:
   m_GameObject: {fileID: 1415726069}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.5548, y: -5.36, z: 0}
+  m_LocalPosition: {x: 0, y: -5.36, z: 0}
   m_LocalScale: {x: 1.150864, y: 9.484163, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -655,7 +655,7 @@ GameObject:
   - component: {fileID: 1831870938}
   - component: {fileID: 1831870941}
   m_Layer: 0
-  m_Name: 6092cf83-530a-45cd-a666-197a222a714d-removebg-preview
+  m_Name: PrincesaEFelipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -789,7 +789,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 5578a52c0daaea241ab0cad00995f13f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

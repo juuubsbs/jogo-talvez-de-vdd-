@@ -16,8 +16,6 @@ public class camset : MonoBehaviour
 
     void Follow()
     {
-        if (alvo != null) // Verifica se o alvo não é nulo
-        {
             Vector3 posicaoAlvo = alvo.transform.position; // Posição do alvo
             float distancia = Vector3.Distance(transform.position, posicaoAlvo); // Calcula a distância entre a câmera e o alvo
 
@@ -28,7 +26,6 @@ public class camset : MonoBehaviour
             }
 
             Vector3 posicaoSuavizada = Vector3.Lerp(transform.position, posicaoAlvo, vSuave); // Suaviza a posição da câmera
-            transform.position = new Vector3(posicaoSuavizada.x, posicaoSuavizada.y, transform.position.z); // Atualiza a posição da câmera, mantendo o valor original do eixo z
-        }
+            transform.position = new Vector3(posicaoSuavizada.x, transform.position.y, transform.position.z); // Atualiza a posição da câmera, mantendo o valor original dos eixos y e z
     }
 }
