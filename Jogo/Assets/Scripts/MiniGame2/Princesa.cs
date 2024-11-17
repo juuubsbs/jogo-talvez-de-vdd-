@@ -42,6 +42,11 @@ public class Princesa : MonoBehaviour
             // Aplica o movimento
             Vector3 movimento = new Vector3(movimentoHorizontal * velocidadeHorizontal, movimentoVertical * velocidadeVertical, 0f);
             transform.Translate(movimento * Time.deltaTime);
+
+            // Limita a posição da personagem
+            float clampedX = Mathf.Clamp(transform.position.x, -16f, 16f);
+            float clampedY = Mathf.Clamp(transform.position.y, -2f, 3.5f);
+            transform.position = new Vector3(clampedX, clampedY, transform.position.z);
         }
     }
 }

@@ -6,11 +6,14 @@ public class GerenciadorDeJogo : MonoBehaviour
 
     void Start()
     {
-        // Inicialização do jogo
+       
     }
 
     void Update()
     {
-        // Lógica do jogo
+        if(jogoIniciou)
+        {
+            PlayerPrefs.SetInt("Vida", 2);
+        }
     }
 }

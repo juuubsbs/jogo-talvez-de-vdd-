@@ -8,11 +8,12 @@ public class camset : MonoBehaviour
     public float vSuave = 0.025f; // Velocidade de suavização
     public float disMax = 5f; // Distância máxima para a câmera seguir
     private GerenciadorDeJogo gerenciadorDeJogo; // Referência ao script GerenciadorDeJogo
-
+    private GameObject vida; // Referência ao script Vida
     void Start()
     {
         // Obtém a referência ao script GerenciadorDeJogo
         gerenciadorDeJogo = FindObjectOfType<GerenciadorDeJogo>();
+        vida = GameObject.Find("Vida");
     }
 
     // Update é chamado uma vez por frame
@@ -22,12 +23,13 @@ public class camset : MonoBehaviour
         {
             MoverCameraYZero(); // Chama a função para mover a câmera para y = 0
         }
+
         Follow(); // Chama a função Follow a cada frame 
     }
 
     void Follow()
     {
-        if (gerenciadorDeJogo.jogoIniciou && transform.position.y == 0) // Se a variável PosicaoInicialJogo for falsa
+        if (gerenciadorDeJogo.jogoIniciou) // Se a variável PosicaoInicialJogo for falsa
         {
             Vector3 posicaoAlvo = alvo.transform.position; // Posição do alvo
             float distancia = Vector3.Distance(transform.position, posicaoAlvo); // Calcula a distância entre a câmera e o alvo
@@ -40,6 +42,7 @@ public class camset : MonoBehaviour
 
             Vector3 posicaoSuavizada = Vector3.Lerp(transform.position, posicaoAlvo, vSuave); // Suaviza a posição da câmera
             transform.position = new Vector3(posicaoSuavizada.x, transform.position.y, transform.position.z); // Atualiza a posição da câmera, mantendo o valor original dos eixos y e z
+            vida.transform.position = transform.position + (new Vector3(-7, 4, 0)); // Atualiza a posição do objeto vida
         }
     }
 
