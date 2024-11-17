@@ -16,16 +16,9 @@ public class SoundsHandler : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = clickSound;
 
+        PlayerPrefs.SetInt("Vida", 3);
         button.onClick.AddListener(PlayClick);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-        
-    }
-
     void PlayClick()
     {
         Debug.Log ("You have clicked the button!");
