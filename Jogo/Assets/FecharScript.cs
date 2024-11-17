@@ -4,10 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-//script pra controlar o trigger pra tecla de menu
-public class menuWindow : MonoBehaviour
+public class FecharScript : MonoBehaviour
 {
-
     private Button button;
     private GameObject painel;
 
@@ -17,13 +15,13 @@ public class menuWindow : MonoBehaviour
         button = GetComponent<Button>();
         painel = GameObject.Find("Modal Window");
 
-        painel.SetActive(false);
         button.onClick.AddListener(ChamaMenu);
     }
 
     // função pra chamar o menu
     void ChamaMenu(){
-        painel.SetActive(true);
-        Time.timeScale = 0;
+        painel.SetActive(false);
+        Time.timeScale = 1;
+
     }
 }

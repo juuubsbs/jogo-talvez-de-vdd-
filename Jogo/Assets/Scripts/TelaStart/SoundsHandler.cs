@@ -14,6 +14,7 @@ public class SoundsHandler : MonoBehaviour
     {
         button = GetComponent<Button>();
         audioSource = GetComponent<AudioSource>();
+
         audioSource.clip = clickSound;
 
         PlayerPrefs.SetInt("Vida", 3);
@@ -22,6 +23,7 @@ public class SoundsHandler : MonoBehaviour
     void PlayClick()
     {
         Debug.Log ("You have clicked the button!");
+        audioSource.volume = PlayerPrefs.GetFloat("volume", 0.5f);
         audioSource.Play();
     }
 }
