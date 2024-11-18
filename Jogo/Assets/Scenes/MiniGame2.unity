@@ -9226,52 +9226,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &382999430
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 382999432}
-  - component: {fileID: 382999431}
-  m_Layer: 0
-  m_Name: Atira
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &382999431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382999430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df9c11b00acd9f94d80e0496ba250d7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  balaPrefab: {fileID: 3530323432806563133, guid: 3f98e14a266dc20448d9892a2639c505, type: 3}
-  forcaTiro: 10
---- !u!4 &382999432
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382999430}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.0000005, y: -1.762461, z: 0.109801635}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &644456313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18598,7 +18552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jogoIniciou: 0
-  Vida: {fileID: 0}
+  Vida: {fileID: 193692138}
 --- !u!4 &1755270677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 225202120949457878, guid: 19014f6462783234da5f5706367098fb, type: 3}
@@ -18667,7 +18621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e258441c687324c9c15b426cc75fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 1046798687314519862, guid: 77d367ec19e06b448acbe19b7426c394, type: 3}
   intervaloMin: 0.5
   intervaloMax: 3
   modo: 0
@@ -19534,7 +19488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 225202120949457878, guid: 19014f6462783234da5f5706367098fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.38
       objectReference: {fileID: 0}
     - target: {fileID: 225202120949457878, guid: 19014f6462783234da5f5706367098fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19581,6 +19535,5 @@ SceneRoots:
   - {fileID: 644456313}
   - {fileID: 1702395245}
   - {fileID: 708164978}
-  - {fileID: 382999432}
   - {fileID: 101376538}
   - {fileID: 1812607751}
