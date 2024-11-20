@@ -9344,7 +9344,7 @@ GameObject:
   - component: {fileID: 716100902}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Parede
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18551,7 +18551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea81b48844cfe72469e9c2774888b1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jogoIniciou: 0
+  jogoIniciou: 1
   Vida: {fileID: 193692138}
 --- !u!4 &1755270677 stripped
 Transform:
@@ -18654,7 +18654,7 @@ GameObject:
   - component: {fileID: 2006885361}
   m_Layer: 0
   m_Name: "Ch\xE3o"
-  m_TagString: Untagged
+  m_TagString: Parede
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2205721973597851465}
   - component: {fileID: 3099741785031927221}
   - component: {fileID: 6418558426947433616}
+  - component: {fileID: 7201852844789386787}
   m_Layer: 0
   m_Name: Bala
   m_TagString: Bala
@@ -102,7 +103,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3fdf4b7fd7da2da4685ad8ae554d4287, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -148,3 +149,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.07
+--- !u!114 &7201852844789386787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3530323432806563133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60e6f077bc77454c82a8b04b0b9a20f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempoParaDestruir: 4
