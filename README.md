@@ -6,4 +6,4 @@ Oiê, esse repo é do jogo "Princess Pasta", onde uma princesa cadeirante busca 
 Carlos Isidro
 Juliana Bertolazi Simon
 Lucas Emanoel
-Nicolas
+Nicolas Vera
