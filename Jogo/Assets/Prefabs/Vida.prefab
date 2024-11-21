@@ -188,7 +188,7 @@ MonoBehaviour:
   - {fileID: 104165340342567842}
   - {fileID: 4739447057525456342}
   - {fileID: 6578941313369161154}
-  vidaAtual: 0
+  vidaAtual: 3
 --- !u!1 &4739447057525456342
 GameObject:
   m_ObjectHideFlags: 0

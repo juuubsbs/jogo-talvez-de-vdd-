@@ -46,6 +46,21 @@ public class Inimigo : MonoBehaviour
             }
         }
     }
+    private void contadorDeKills()
+    {
+        // Encontra o player na cena
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            // Obtém o script Princesa no objeto player
+            Princesa princesaScript = player.GetComponent<Princesa>();
+            if (princesaScript != null)
+            {
+                // Incrementa a variável kills
+                princesaScript.kills++;
+            }
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -63,6 +78,7 @@ public class Inimigo : MonoBehaviour
         if (hitsToDeath <= 0)
         {
             PlayDeathSound(); // Toca o som de morte
+            contadorDeKills(); // Incrementa o contador de kills
             Destroy(gameObject); // Destroi o inimigo se os acertos forem suficientes
         }
         else

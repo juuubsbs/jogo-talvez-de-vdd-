@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement; // Inclua a biblioteca SceneManagement
 
 public class Vida : MonoBehaviour
 {
@@ -20,20 +21,19 @@ public class Vida : MonoBehaviour
         {
             vidaAtual = novaVida;
             AtualizarCoracoes();
+
+            // Verifica se a vida chegou a 0
+            if (vidaAtual <= 0)
+            {
+                // Carrega a cena "GameOver"
+                SceneManager.LoadScene("GameOver");
+            }
         }
     }
 
-    public void AlterarVida(int novaVida)
+    void AtualizarCoracoes()
     {
-        vidaAtual = novaVida;
-        PlayerPrefs.SetInt("Vida", vidaAtual);
-        PlayerPrefs.Save();
-        AtualizarCoracoes();
-    }
-
-    // Atualiza a visibilidade dos corações com base na vida atual
-    private void AtualizarCoracoes()
-    {
+        // Atualiza a exibição dos corações de vida
         for (int i = 0; i < coracoes.Length; i++)
         {
             coracoes[i].SetActive(i < vidaAtual);
