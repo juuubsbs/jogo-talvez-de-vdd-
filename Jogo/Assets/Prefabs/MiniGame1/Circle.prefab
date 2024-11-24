@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5539591581698148213}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,9 +132,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b94386f1e40d0324d827e7d7c578afd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  vidaPrincesa: 0
+  somDeDano: {fileID: 8300000, guid: 9ad2ff18150a76b469073d7e95d4a461, type: 3}
   rigidbody2: {fileID: 2724964603934818945}
-  velocidademaxima: 4
-  velocidademinima: 2
+  velocidademaxima: 10
+  velocidademinima: 5
 --- !u!58 &6831536690968492987
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -164,12 +167,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012335027, y: 0.000023296152}
+  m_Offset: {x: 0.037813406, y: 0.029055301}
   serializedVersion: 2
-  m_Radius: 1.5130677
+  m_Radius: 1.4343234
 --- !u!222 &1099373264019049222
 CanvasRenderer:
   m_ObjectHideFlags: 0
