@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class AudioController : MonoBehaviour
 {
     public Slider volumeSlider; // Referência para o Slider
     private AudioSource audioSource; // Referência para o AudioSource
+    [SerializeField] private AudioMixer audioMixer; // Referência para o AudioMixer
 
     void Start()
     {
@@ -20,7 +22,9 @@ public class AudioController : MonoBehaviour
 
     void SetVolume(float volume)
     {
-        audioSource.volume = volume; // Define o volume do AudioSource
+        volume = Mathf.Clamp(volume, 0.0001f, 1);
+        
+        audioMixer.SetFloat("volume", Mathf.Log10(volume) * 20); // Define o volume do AudioMixer
         PlayerPrefs.SetFloat("volume", volume); // Salva o volume no PlayerPrefs
         PlayerPrefs.Save(); // Garante que o PlayerPrefs seja salvo
     }
