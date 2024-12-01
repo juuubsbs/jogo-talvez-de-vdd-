@@ -29,11 +29,15 @@ public class GerenciadorDeJogoMG1 : MonoBehaviour
             vida.SetActive(true);
             princesa.SetActive(true);
             mrPasta.SetActive(true);
-            StartCoroutine(espera2segundosEAtivaSpawner());
+            if (!jogoAcabou)
+            {
+                StartCoroutine(espera2segundosEAtivaSpawner());
+            }
 
             tempoDecorrido += Time.deltaTime;
-            if (tempoDecorrido >= 30f)
+            if (tempoDecorrido >= 25f)
             {
+                DestruirTodosOsFilhos(spawner);
                 jogoAcabou = true;
                 spawner.SetActive(false);
                 vida.SetActive(false);
@@ -57,5 +61,12 @@ public class GerenciadorDeJogoMG1 : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         spawner.SetActive(true);
+    }
+    void DestruirTodosOsFilhos(GameObject objeto)
+    {
+        foreach (Transform child in objeto.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
     }
 }

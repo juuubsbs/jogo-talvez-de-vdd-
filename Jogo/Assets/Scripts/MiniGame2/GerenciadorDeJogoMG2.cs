@@ -1,45 +1,58 @@
 using UnityEngine;
 
-public class GerenciadorDeJogo : MonoBehaviour
+public class GerenciadorDeJogoMG2 : MonoBehaviour
 {
     public bool jogoIniciou = false;
     public GameObject vida;
     public GameObject princesaObject;
     public GameObject spawnerObject;
-    public GameObject mrPasta;
+    public GameObject pauseCanvas;
+    public GameObject dialogo;
     private Princesa princesaScript;
     private int fase1;
     private int fase2;
+    private int vitoria;
     private SpawnerAlmondegas spawnerScript;
+    public bool fimDaMensagem1 = false;
+    public bool fimDaMensagem2 = false;
+
+    public bool jogoAcabou = false;
 
 
     void Start()
     {
         fase1 = Random.Range(5, 10);
-        fase2 = Random.Range(15, 20);
+        fase2 = 15;
+        vitoria = 20;
         princesaScript = princesaObject.GetComponent<Princesa>();
         spawnerScript = spawnerObject.GetComponent<SpawnerAlmondegas>();
     }
 
     void Update()
     {
-        ativaVida();
+        princesaObject.SetActive(jogoIniciou);
+        spawnerObject.SetActive(jogoIniciou);
 
-        if (princesaScript.kills >= fase1)
+        if (princesaScript.kills == fase1)
         {
             spawnerScript.modo = 1;
         }
-        else if (princesaScript.kills >= fase2)
+        else if (princesaScript.kills == fase2)
         {
             spawnerScript.modo = 2;
         }
-    }
-
-    void ativaVida()
-    {
-        if (vida != null && Mathf.Abs(vida.transform.position.y) < 0.1f)
+        else if (princesaScript.kills >= vitoria)
         {
-            vida.SetActive(true); // Ativa o objeto Vida
+            spawnerObject.SetActive(false);
+            princesaObject.SetActive(false);
+            vida.SetActive(false);
+            pauseCanvas.SetActive(false);  
+            jogoAcabou = true;
+            dialogo.SetActive(true);
+        }
+        if (princesaScript.kills >= vitoria && fimDaMensagem2)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Vitoria");
         }
     }
 }

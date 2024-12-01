@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class camset : MonoBehaviour
 {
+    public GameObject gerenciadorDeJogoObj; // Referência ao objeto GerenciadorDeJogoMG2
     public GameObject alvo; // Referência ao objeto alvo
+    public GameObject pauseCanvas; // Referência ao objeto pauseCanvas
     public float vSuave = 0.01f; // Velocidade de suavização
     public float disMax = 5f; // Distância máxima para a câmera seguir
-    private GerenciadorDeJogo gerenciadorDeJogo; // Referência ao script GerenciadorDeJogo
+    private GerenciadorDeJogoMG2 gerenciadorDeJogo; // Referência ao script GerenciadorDeJogo
     [SerializeField] private GameObject vida; // Referência ao script Vida
     void Start()
     {
         // Obtém a referência ao script GerenciadorDeJogo
-        gerenciadorDeJogo = FindObjectOfType<GerenciadorDeJogo>();
+        gerenciadorDeJogo = gerenciadorDeJogoObj.GetComponent<GerenciadorDeJogoMG2>();
     }
 
     // Update é chamado uma vez por frame
@@ -22,7 +24,6 @@ public class camset : MonoBehaviour
         {
             MoverCameraYZero(); // Chama a função para mover a câmera para y = 0
         }
-
         Follow(); // Chama a função Follow a cada frame 
     }
 
@@ -41,7 +42,7 @@ public class camset : MonoBehaviour
 
             Vector3 posicaoSuavizada = Vector3.Lerp(transform.position, posicaoAlvo, vSuave); // Suaviza a posição da câmera
             transform.position = new Vector3(posicaoSuavizada.x, transform.position.y, transform.position.z); // Atualiza a posição da câmera, mantendo o valor original dos eixos y e z
-            vida.transform.position = transform.position + (new Vector3(-7, 4, 0)); // Atualiza a posição do objeto vida
+            vida.transform.position = transform.position + (new Vector3(-6, 4, 0)); // Atualiza a posição do objeto vida
         }
     }
 
@@ -53,6 +54,7 @@ public class camset : MonoBehaviour
         if (Mathf.Abs(transform.position.y) < 0.1f)
         {
             vida.SetActive(true); // Ativa o objeto Vida
+            pauseCanvas.SetActive(true); // Ativa o objeto pauseCanvas
         }
     }
 }

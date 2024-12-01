@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Princesa : MonoBehaviour
 {
-    private GerenciadorDeJogo gerenciadorDeJogo;
+    public GameObject gerenciadorDeJogoObj; // Referência ao objeto GerenciadorDeJogoMG2
+    private GerenciadorDeJogoMG2 gerenciadorDeJogo;
     [SerializeField] private float velocidadeHorizontal = 3.5f; // Variável pública para controlar a velocidade horizontal
     [SerializeField] private float velocidadeVertical = 1f; // Variável pública para controlar a velocidade vertical
     public int vida = 0; // Vida da personagem
@@ -17,7 +18,7 @@ public class Princesa : MonoBehaviour
     void Start()
     {
         // Obtém a referência ao script GerenciadorDeJogo
-        gerenciadorDeJogo = FindObjectOfType<GerenciadorDeJogo>();
+        gerenciadorDeJogo = gerenciadorDeJogoObj.GetComponent<GerenciadorDeJogoMG2>();
         // Obtém o componente SpriteRenderer
         spriteRenderer = GetComponent<SpriteRenderer>();
         // Salva a cor original do sprite
@@ -65,7 +66,7 @@ public class Princesa : MonoBehaviour
 
             // Limita a posição da personagem
             float clampedX = Mathf.Clamp(transform.position.x, -22f, 22f);
-            float clampedY = Mathf.Clamp(transform.position.y, -2f, 3.5f);
+            float clampedY = Mathf.Clamp(transform.position.y, -0.69f, 3.5f);
             transform.position = new Vector3(clampedX, clampedY, transform.position.z);
         }
 

@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MrPasta : MonoBehaviour
+public class MrPasta1 : MonoBehaviour
 {
     public float amplitude = 5f; // Amplitude do movimento
+    public GameObject gerenciadorObj; // Referência ao objeto GerenciadorDeJogoMG2
     private GerenciadorDeJogoMG1 gerenciadorScript; // Referência ao script GerenciadorDeJogoMG1
     public float frequencia = 1f; // Frequência do movimento
     private float tempo;
@@ -12,17 +13,15 @@ public class MrPasta : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(false);
+        gerenciadorScript = gerenciadorObj.GetComponent<GerenciadorDeJogoMG1>(); //pega o script do gerenciador
         tempo = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        gerenciadorScript = GameObject.Find("GerenciadorDeJogo").GetComponent<GerenciadorDeJogoMG1>(); //pega o script do gerenciador
         if(gerenciadorScript.jogoIniciou) // Verifica se a variável jogoIniciou é verdadeira
         {
-            gameObject.SetActive(true);
             MovimentoOnda(); // Chama a função MovimentoOnda a cada frame
         }
     }
