@@ -13988,7 +13988,7 @@ RectTransform:
   m_Children:
   - {fileID: 123363749}
   - {fileID: 347704551}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2058373533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -14040,9 +14040,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jogoIniciou: 1
-  Vida: {fileID: 193692138}
-  Princesa: {fileID: 1760088433}
-  MrPasta: {fileID: 101376536}
+  vida: {fileID: 193692138}
+  princesaObject: {fileID: 1760088433}
+  spawnerObject: {fileID: 1812607749}
+  mrPasta: {fileID: 101376536}
 --- !u!4 &1755270677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 225202120949457878, guid: 19014f6462783234da5f5706367098fb, type: 3}
@@ -14946,7 +14947,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1534707078}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2058373534
@@ -15032,5 +15034,4 @@ SceneRoots:
   - {fileID: 708164978}
   - {fileID: 1812607751}
   - {fileID: 101376538}
-  - {fileID: 1534707078}
   - {fileID: 328553140}

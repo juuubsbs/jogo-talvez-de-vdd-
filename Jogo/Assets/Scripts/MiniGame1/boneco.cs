@@ -6,6 +6,7 @@ public class Boneco : MonoBehaviour
     public float speed; // Velocidade de movimento do boneco
     private Rigidbody2D rig; // Componente Rigidbody2D para controlar a física do boneco
     private SpriteRenderer spriteRenderer; // Componente SpriteRenderer para alterar a cor do objeto
+    private GerenciadorDeJogoMG1 gerenciadorScript; // Referência ao script GerenciadorDeJogoMG1
     private int vidaAnterior; // Armazena o valor anterior de "Vida"
     private float danoTimer; // Tempo restante para o efeito de dano
     private Color corOriginal; // Cor original do objeto
@@ -14,6 +15,8 @@ public class Boneco : MonoBehaviour
 
     void Start()
     {
+
+        gerenciadorScript = GameObject.Find("GerenciadorDeJogo").GetComponent<GerenciadorDeJogoMG1>(); //pega o script do gerenciador
         PlayerPrefs.SetInt("Vida", 3); // Inicializa a vida no PlayerPrefs
         vidaAnterior = PlayerPrefs.GetInt("Vida"); // Armazena o valor inicial da vida
         rig = GetComponent<Rigidbody2D>(); // Obtém o componente Rigidbody2D
@@ -24,8 +27,10 @@ public class Boneco : MonoBehaviour
 
     void Update()
     {
-        direction = Input.GetAxis("Horizontal"); // Obtém a direção do movimento horizontal a partir da entrada do usuário
-
+        if (gerenciadorScript.jogoIniciou)
+        {
+            direction = Input.GetAxis("Horizontal"); // Obtém a direção do movimento horizontal a partir da entrada do usuário
+        }
         // Verifica se houve alteração no valor de "Vida"
         int vidaAtual = PlayerPrefs.GetInt("Vida");
         if (vidaAtual != vidaAnterior)

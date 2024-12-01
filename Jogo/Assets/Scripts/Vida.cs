@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement; // Inclua a biblioteca SceneManagement
 public class Vida : MonoBehaviour
 {
     [SerializeField] private GameObject[] coracoes; // Array de GameObjects que representam os corações de vida
-    public int vidaAtual;
+    public int vidaAtual; // Vida atual do jogador
 
     void Start()
     {
@@ -29,6 +29,7 @@ public class Vida : MonoBehaviour
                 SceneManager.LoadScene("GameOver");
             }
         }
+
     }
 
     void AtualizarCoracoes()

@@ -22,7 +22,7 @@ public class Princesa : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         // Salva a cor original do sprite
         corOriginal = spriteRenderer.color;
-
+        vida = PlayerPrefs.GetInt("Vida", 3); // Carrega a vida do PlayerPrefs
         // Configura o Rigidbody2D como Kinematic
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb == null)
@@ -64,7 +64,7 @@ public class Princesa : MonoBehaviour
             transform.Translate(movimento * Time.deltaTime);
 
             // Limita a posição da personagem
-            float clampedX = Mathf.Clamp(transform.position.x, -16f, 16f);
+            float clampedX = Mathf.Clamp(transform.position.x, -22f, 22f);
             float clampedY = Mathf.Clamp(transform.position.y, -2f, 3.5f);
             transform.position = new Vector3(clampedX, clampedY, transform.position.z);
         }

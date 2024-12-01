@@ -7,7 +7,7 @@ public class meteoro : MonoBehaviour
 {
     // Vida da princesa/jogador
     public int vidaPrincesa;
-
+    public GerenciadorDeJogoMG1 gerenciadorDeJogoMG1;
     // Áudio a ser tocado quando o jogador sofre dano
     public AudioClip somDeDano;
 
@@ -28,16 +28,16 @@ public class meteoro : MonoBehaviour
     {
         // Carrega o valor de "Vida" armazenado no PlayerPrefs, com valor padrão 3 caso não exista
         vidaPrincesa = PlayerPrefs.GetInt("Vida", 3);
-
+        gerenciadorDeJogoMG1 = FindObjectOfType<GerenciadorDeJogoMG1>();
         // Sorteia uma velocidade aleatória para o meteoro entre os valores mínimos e máximos
-        this.velocidadeY = Random.Range(this.velocidademaxima, velocidademaxima);
+        velocidadeY = Random.Range(velocidademaxima, velocidademaxima);
     }
 
     // Método chamado a cada frame
     void Update()
     {
         // Define a velocidade do meteoro no eixo Y (descendo verticalmente)
-        this.rigidbody2.velocity = new Vector2(0, -velocidadeY);
+        rigidbody2.velocity = new Vector2(0, -velocidadeY);
     }
 
     // Método chamado quando o meteoro colide com outro objeto
@@ -46,17 +46,18 @@ public class meteoro : MonoBehaviour
         // Verifica se o objeto com o qual colidiu possui a tag "Player"
         if (other.CompareTag("Player"))
         {
-            // Decrementa a vida da princesa/jogador
-            vidaPrincesa--;
+            gerenciadorDeJogoMG1.totalHits++; // Incrementa o contador de colisões 
 
-            // Atualiza o valor de "Vida" no PlayerPrefs
-            PlayerPrefs.SetInt("Vida", vidaPrincesa);
-
-            // Reproduz o som de dano na posição do meteoro
-            AudioSource.PlayClipAtPoint(somDeDano, transform.position);
-
-            // Destroi o meteoro após a colisão
-            Destroy(gameObject);
+            if (gerenciadorDeJogoMG1.totalHits >= 3)
+            {
+                vidaPrincesa--;
+                // Atualiza o valor de "Vida" no PlayerPrefs
+                PlayerPrefs.SetInt("Vida", vidaPrincesa);
+                // Reproduz o som de dano na posição do meteoro
+                AudioSource.PlayClipAtPoint(somDeDano, transform.position);
+                gerenciadorDeJogoMG1.totalHits = 0; // Reseta o contador de colisões
+            }
+            Destroy(gameObject); // Destroi o meteoro após a colisão
         }
     }
 }
