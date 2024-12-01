@@ -18,7 +18,6 @@ public class MouseMovesHandler : MonoBehaviour
         if (Input.GetMouseButtonDown(0)){
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             raio = Camera.main.ScreenPointToRay(mousePosition);
-            Debug.Log("Mouse clicked" + raio);
         };
     }
 }

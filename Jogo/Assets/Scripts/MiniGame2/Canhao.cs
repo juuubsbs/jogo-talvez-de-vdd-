@@ -13,7 +13,7 @@ public class Canhao : MonoBehaviour
     public AudioClip tiroSom; // Som de tiro
 
     // Variáveis públicas para guardar os ângulos limitados
-    private float anguloLimitadoEsquerda; 
+    private float anguloLimitadoEsquerda;
     private float anguloLimitadoDireita;
 
     void Update()
@@ -28,7 +28,7 @@ public class Canhao : MonoBehaviour
         Vector3 posicaoRelativaMouse = posicaoMouse - posicaoGerenciador;
 
         // Canhão direito - Só deve rotacionar quando o mouse está à direita (x > 0)
-        if (canhaoDireito != null && posicaoRelativaMouse.x > 0)
+        if (canhaoDireito != null && posicaoRelativaMouse.x > 0 && Time.timeScale != 0)
         {
             Vector2 direcaoDireita = canhaoDireito.transform.position - posicaoMouse; // Inverte a direção
             float anguloDireita = Mathf.Atan2(direcaoDireita.y, direcaoDireita.x) * Mathf.Rad2Deg;
@@ -44,7 +44,7 @@ public class Canhao : MonoBehaviour
         }
 
         // Canhão esquerdo - Só deve rotacionar quando o mouse está à esquerda (x < 0)
-        if (canhaoEsquerdo != null && posicaoRelativaMouse.x < 0)
+        if (canhaoEsquerdo != null && posicaoRelativaMouse.x < 0 && Time.timeScale != 0)
         {
             Vector2 direcaoEsquerda = posicaoMouse - canhaoEsquerdo.transform.position; // Direção correta
             float anguloEsquerda = Mathf.Atan2(direcaoEsquerda.y, direcaoEsquerda.x) * Mathf.Rad2Deg;
@@ -76,19 +76,19 @@ public class Canhao : MonoBehaviour
         {
             canhaoSelecionado = canhaoEsquerdo;
             balaSpawnerSelecionado = balaSpawnerEsquerda;
-            anguloDisparo = anguloLimitadoEsquerda-180f;
+            anguloDisparo = anguloLimitadoEsquerda - 180f;
         }
         else
         {
             canhaoSelecionado = canhaoDireito;
             balaSpawnerSelecionado = balaSpawnerDireita;
-            anguloDisparo = anguloLimitadoDireita-180f;
+            anguloDisparo = anguloLimitadoDireita - 180f;
         }
 
-        if (canhaoSelecionado != null)
+        if (canhaoSelecionado != null && Time.timeScale != 0)
         {
-            // Instancia a bala no spawner do canhão selecionado
-            AudioSource.PlayClipAtPoint(tiroSom, balaSpawnerSelecionado.transform.position); // Toca o som de tiro
+            float volume = PlayerPrefs.GetFloat("volume", 1f);
+            AudioSource.PlayClipAtPoint(tiroSom, balaSpawnerSelecionado.transform.position, volume); // Toca o som de tiro
             GameObject bala = Instantiate(prefabBala, balaSpawnerSelecionado.transform.position, canhaoSelecionado.transform.rotation);
             Rigidbody2D rb = bala.GetComponent<Rigidbody2D>();
 

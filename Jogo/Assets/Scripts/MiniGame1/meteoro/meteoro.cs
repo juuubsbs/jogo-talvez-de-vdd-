@@ -53,8 +53,9 @@ public class meteoro : MonoBehaviour
                 vidaPrincesa--;
                 // Atualiza o valor de "Vida" no PlayerPrefs
                 PlayerPrefs.SetInt("Vida", vidaPrincesa);
+                float volume = PlayerPrefs.GetFloat("volume", 1f); // Padrão: volume máximo
                 // Reproduz o som de dano na posição do meteoro
-                AudioSource.PlayClipAtPoint(somDeDano, transform.position);
+                AudioSource.PlayClipAtPoint(somDeDano, transform.position, volume);
                 gerenciadorDeJogoMG1.totalHits = 0; // Reseta o contador de colisões
             }
             Destroy(gameObject); // Destroi o meteoro após a colisão

@@ -93,9 +93,9 @@ public class Princesa : MonoBehaviour
                 vida--;
                 PlayerPrefs.SetInt("Vida", vida); // Salva a vida do jogador
                 colisaoContador = 0; // Reseta o contador após perder 1 de vida
-
+                float volume = PlayerPrefs.GetFloat("volume", 1f); // Padrão: volume máximo
                 // Toca o som de dano na posição da princesa
-                AudioSource.PlayClipAtPoint(somDeDano, transform.position);
+                AudioSource.PlayClipAtPoint(somDeDano, transform.position, volume);
 
                 // Muda a cor do sprite para vermelho
                 spriteRenderer.color = Color.red;

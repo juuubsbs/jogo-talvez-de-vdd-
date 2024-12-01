@@ -23,8 +23,6 @@ public class Inimigo : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         // Salva a cor original do sprite
         originalColor = spriteRenderer.color;
-        // Define o volume do áudio com base no valor salvo em PlayerPrefs, padrão 0.5
-        audioSource.volume = PlayerPrefs.GetFloat("volume", 0.5f);
     }
 
     private void Update()
@@ -92,7 +90,8 @@ public class Inimigo : MonoBehaviour
     {
         if (audioSource != null && hitSound != null)
         {
-            audioSource.PlayOneShot(hitSound);
+            float volume = PlayerPrefs.GetFloat("volume", 1f); // Padrão: volume máximo
+            audioSource.PlayOneShot(hitSound, volume);
         }
     }
 
@@ -100,7 +99,8 @@ public class Inimigo : MonoBehaviour
     {
         if (audioSource != null && deathSound != null)
         {
-            AudioSource.PlayClipAtPoint(deathSound, transform.position, audioSource.volume);
+            float volume = PlayerPrefs.GetFloat("volume", 1f); // Padrão: volume máximo
+            AudioSource.PlayClipAtPoint(deathSound, transform.position, volume);
         }
     }
 
