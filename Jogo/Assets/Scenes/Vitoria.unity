@@ -466,37 +466,16 @@ GameObject:
   m_Component:
   - component: {fileID: 663896176}
   - component: {fileID: 663896175}
-  - component: {fileID: 663896174}
   - component: {fileID: 663896177}
   - component: {fileID: 663896178}
+  - component: {fileID: 663896179}
   m_Layer: 0
-  m_Name: GameOver
+  m_Name: "Vit\xF3ria !"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &663896174
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 663896173}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b1aa81090aca3f846a4c2c1f17855f69, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &663896175
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -538,7 +517,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7550cccabd7cc2f4a8b2223f13b206c5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b6b832b68d089524c9c5142e3fa9228f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -576,10 +555,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6877e897c32f78b4e96c681afecc0e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  gameOverSound:
-  - {fileID: 8300000, guid: 3cef4fca0955eb041ae9618cce4e36cb, type: 3}
-  - {fileID: 8300000, guid: 7a871dcdccf93864fb87041ae2ec02b6, type: 3}
 --- !u!82 &663896178
 AudioSource:
   m_ObjectHideFlags: 0
@@ -590,7 +565,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 846f531dfa084c84cb5eb83c4651d957, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 3cef4fca0955eb041ae9618cce4e36cb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2292348bbdda2994e857531f24167997, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -676,6 +651,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &663896179
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663896173}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97d88cec926f72d4da040d4d84718d48, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1179668345
 GameObject:
   m_ObjectHideFlags: 0
