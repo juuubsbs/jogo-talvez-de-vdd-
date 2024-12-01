@@ -15,7 +15,6 @@ public class callScene : MonoBehaviour
     }
 
     void ChamaCena(){
-        Debug.Log("Chamando cena");
         SceneManager.LoadScene("MiniGame1");
         SceneManager.UnloadSceneAsync("MiniGame1");
     }
