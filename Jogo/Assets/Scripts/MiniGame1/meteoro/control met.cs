@@ -17,7 +17,7 @@ public class controlmet : MonoBehaviour
     void Update()
     {
         tempoDecorrido += Time.deltaTime; //aumentando o tempo
-        tempoDecorrido += Random.Range(0.01f, 0.05f); //tempo aleatorio
+        tempoDecorrido += Random.Range(0.001f, 0.03f); //tempo aleatorio
 
         if (gerenciadorScript.jogoIniciou && tempoDecorrido >= 1f)
         {

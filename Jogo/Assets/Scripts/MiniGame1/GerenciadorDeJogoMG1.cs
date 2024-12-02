@@ -40,6 +40,7 @@ public class GerenciadorDeJogoMG1 : MonoBehaviour
                 DestruirTodosOsFilhos(spawner);
                 jogoAcabou = true;
                 spawner.SetActive(false);
+                pauseCanvas.SetActive(false);
                 vida.SetActive(false);
                 princesa.SetActive(false);
                 mrPasta.SetActive(false);
